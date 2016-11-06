@@ -1,6 +1,4 @@
 #('2_6_10')
-#kdjfksjdfls
-print()
 mtrx = []
 inpt = True
 lst = []
