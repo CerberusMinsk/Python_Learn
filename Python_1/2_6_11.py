@@ -3,22 +3,28 @@ mtrx = [[0 for j in range(n)] for i in range(n)]
 num = 1
 x = 0
 y = 0
-y_end = 0
-x_end = 0
 kfc = 1
+XX = 0
+YY = 0
 while num <= n ** 2:
 
-    while y < n:
+    for i in range(YY, n):
         mtrx[x][y] = num
-        num += 4
-        y += 1
+        y += kfc
+        num += 1
+    y += kfc * (-1)
+    x += kfc
+    XX += 1
 
-    x_end += 1
-    y -= 1
-    while x_end < n:
-        mtrx[x_end][y] = num
-        num += 4
-        x_end += 1
+    for i in range(XX, n):
+        mtrx[x][y] = num
+        x += kfc
+        num += 1
+
+    x += kfc * (-1)
+    kfc *= (-1)
+    y += kfc
+    YY += 1
 
 
 
