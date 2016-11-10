@@ -1,13 +1,12 @@
 lst = [1, 2, 3, 4, 5, 6]
 
 def modify_list(l):
-    lenght = len(l)
+    lst_2 = l[:]
+    del l[:]
+    lenght = len(lst_2)
     for i in range(0,lenght):
-
-        if (l[i] % 2) != 0:
-            l.pop(i)
-            lenght -= 1
-
+        if (lst_2[i] % 2) == 0:
+            l.append(int(lst_2[i] / 2))
 
 
 print(modify_list(lst))  # None
