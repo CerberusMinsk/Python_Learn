@@ -1,9 +1,16 @@
-#lst = [i for i in input().split()]
-lst = ['a', 'aa', 'abC', 'aa', 'ac', 'abc', 'bcd', 'a']
+lst = [i for i in input().split()]
+
 lst_2 = {}
-print(lst)
 
 for i in range(len(lst)):
-    lst_2[(lst[i].lower())] = 1
+    var_item = lst[i].lower()
+    if var_item in lst_2:
+        lst_2[var_item] += 1
+    else:
+        lst_2[var_item] = 1
 
-print(lst_2.keys[0])
+key_list = list(lst_2.keys())
+value_list = list(lst_2.values())
+
+for i in range(len(key_list)):
+    print(key_list[i], value_list[i])
