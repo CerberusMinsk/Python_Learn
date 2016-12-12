@@ -2,14 +2,17 @@ import random
 import turtle
 import sys
 
+
 def gotoxy(x, y):
     turtle.penup()
     turtle.goto(x, y)
     turtle.pendown()
 
+
 def draw_line(from_x, from_y, to_x, to_y):
     gotoxy(from_x, from_y)
     turtle.goto(to_x, to_y)
+
 
 def draw_gibbet(step):
     if step == 1:
@@ -25,7 +28,7 @@ def draw_gibbet(step):
         # веревка
         draw_line(-100, 80, -100, 40)
     elif step == 5:
-        gotoxy(-100,0)
+        gotoxy(-100, 0)
         turtle.circle(20)
     elif step == 6:
         # туловище
@@ -43,6 +46,7 @@ def draw_gibbet(step):
         # правая нога
         draw_line(-100, -50, -80, -60)
 
+
 x = random.randint(1, 100)
 
 print('Случайное число: ', x)
@@ -50,17 +54,16 @@ print('Случайное число: ', x)
 turtle.speed(0)
 turtle.color('blue')
 
-
 gotoxy(-200, 250)
 turtle.write('Я загадал число \n Попробуй угадать',
-             font = ('Arial', 18, 'normal'))
+             font=('Arial', 18, 'normal'))
 
-answer = turtle.textinput('Хотите поиграть?' , 'y/n')
+answer = turtle.textinput('Хотите поиграть?', 'y/n')
 if answer == 'n':
     sys.exit(9)
 
 hints = False
-answer = turtle.textinput('Давать подсказки?' , 'y/n')
+answer = turtle.textinput('Давать подсказки?', 'y/n')
 if answer == 'y':
     hints = True
 
@@ -75,7 +78,6 @@ while True:
             turtle.write(str(number) + ' Загаданное число больше')
         else:
             turtle.write(str(number) + ' Загаданное число меньше')
-
 
     if number == x:
         gotoxy(-150, -200)
@@ -97,6 +99,3 @@ while True:
             turtle.write('Ты проиграл, дружок... ха-ха-ха!',
                          font=('Arial', 20, 'normal'))
             break
-
-
-#input()

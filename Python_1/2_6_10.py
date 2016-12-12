@@ -1,4 +1,3 @@
-#('2_6_10')
 mtrx = []
 mtrx_2 = []
 inpt = True
@@ -13,8 +12,7 @@ while inpt:
 
 row = len(mtrx)
 col = len(mtrx[0])
-#print(row)
-#print(col)
+
 mtrx_2 = [[0 for j in range(col)] for i in range(row)]
 
 for i in range(row):
@@ -29,8 +27,6 @@ for i in range(row):
             j_r = j
         mtrx_2[i][j] = int(mtrx[i][j - 1]) + int(mtrx[i - 1][j])
         mtrx_2[i][j] += int(mtrx[i][j_r + 1]) + int(mtrx[i_r + 1][j])
-
-
 
 for i in range(row):
     for j in range(col):

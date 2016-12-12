@@ -4,8 +4,8 @@ x = input()
 cnt = True
 g = 0
 for i in range(len(lst)):
-	if lst[i] == x:
-		print(i, end=' ')
-		cnt = False
+    if lst[i] == x:
+        print(i, end=' ')
+        cnt = False
 if cnt:
-	print('Отсутствует')
+    print('Отсутствует')

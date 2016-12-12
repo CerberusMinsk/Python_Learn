@@ -26,9 +26,6 @@ while num <= n ** 2:
     y += kfc
     YY += 1
 
-
-
-
 for i in range(n):
     for j in range(n):
         print(mtrx[i][j], end=' ')

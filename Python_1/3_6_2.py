@@ -7,4 +7,3 @@ r = requests.get(url)
 
 lst = r.text.splitlines()
 print(len(lst))
-#print(r.text)

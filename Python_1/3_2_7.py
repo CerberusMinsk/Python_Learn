@@ -12,4 +12,4 @@ while n >= 1:
         y = x_list[x]
         print(y)
 
-    n -=1
+    n -= 1

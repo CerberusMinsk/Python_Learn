@@ -28,6 +28,4 @@ with open('dataset_3363_3.txt', 'r') as inf:
         prnt_2 = prnt[0] + " " + str(prnt[1])
         print(prnt_2)
 
-
         ouf.writelines(prnt_2)
-
