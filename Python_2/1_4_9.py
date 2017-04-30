@@ -15,8 +15,13 @@ def get (namespace, var):
            if var == i.get('var'):
                print(i.get('namespace'))
                break
-           elif namespace == 'global':
-               print(i.get('parent'))
+           elif i.get('parent') == 'None':
+               if var != i.get('var'):
+                   if a[1] == 'global':
+                       print('global')
+                   else:
+                       print('None')
+
            else:
                get(i.get('parent'), var)
 
