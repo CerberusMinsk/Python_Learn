@@ -1,18 +1,33 @@
-glb = []
+glb = [{'parent':'None', 'namespace':'global', 'var':''}]
 
-def add (nspc, var):
-    print(nspc, var)
-    if nspc == 'global':
-        glb.append(var)
-    else:
-        pass
-    return 0
+def add (namespace, var):
+    for i in glb:
+        if namespace == i.get('namespace'):
+            i['var'] = var
+            #print(i.get('var'))
 
-i = input().split()
+def create (namespace, parent):
+    glb.append({'parent':parent, 'namespace':namespace, 'var':''})
 
-if i[0] == 'add':
-    print('add')
-    add(i[1],i[2])
+def get (namespace, var):
+   for i in glb:
+       if namespace == i.get('namespace'):
+           if var == i.get('var'):
+               print(i.get('namespace'))
+               break
+           elif namespace == 'global':
+               print(i.get('parent'))
+           else:
+               get(i.get('parent'), var)
 
+n = int(input())
 
-print(glb)
+for i in range(n):
+    a = input().split()
+
+    if a[0] == 'add':
+        add(a[1], a[2])
+    elif a[0] == 'create':
+        create(a[1], a[2])
+    elif a[0] == 'get':
+        get(a[1], a[2])
