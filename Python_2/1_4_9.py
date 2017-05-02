@@ -1,40 +1,39 @@
-glb = [{'parent': 'None', 'namespace': 'global', 'var': ''}]
+glb = [{'parent': 'None', 'namespace': 'global', 'var': []}]
 
 
 def add(namespace, var):
     for i in glb:
         if namespace == i.get('namespace'):
-            i['var'] = var
+            i.get('var').append(var)
             # print(i.get('var'))
 
 
 def create(namespace, parent):
-    glb.append({'parent': parent, 'namespace': namespace, 'var': ''})
+    glb.append({'parent': parent, 'namespace': namespace, 'var': []})
 
 
 def get(namespace, var):
+    global temp
     for i in range(len(glb)):
         if namespace == glb[i].get('namespace'):
             temp = glb[i]
     if namespace == temp.get('namespace'):
-        if var == temp.get('var'):
+        if var in temp.get('var'):
             print(temp.get('namespace'))
-            return 0
-        elif temp.get('parent') == 'None' and var != temp.get('var'):
-            print('None')
             return 0
         else:
             return get(temp.get('parent'), var)
+    else: print('None')
 
 
 n = int(input())
 
 for i in range(n):
-    a = input().split()
+    cmd, nmsp, var = input().split()
 
-    if a[0] == 'add':
-        add(a[1], a[2])
-    elif a[0] == 'create':
-        create(a[1], a[2])
-    elif a[0] == 'get':
-        get(a[1], a[2])
+    if cmd == 'add':
+        add(nmsp, var)
+    elif cmd == 'create':
+        create(nmsp, var)
+    elif cmd == 'get':
+        get(nmsp, var)
