@@ -23,7 +23,7 @@ def walk(dir, dir_copy):
 path = r'/home/cerberus'
 folder = 'LABDIR'
 
-project_dir = '/home/cerberus/LABDIR_COPY'  # input('DIR name: ')
+project_dir = '/home/cerberus/LABDIR_COPY'#input('DIR name: ')
 
 fullpath = os.path.join(path, folder)
 if not os.path.exists(fullpath):
@@ -42,7 +42,7 @@ for i in lst:
         line_list.append('<html><body>\n')
         for line in inf:
             for word in line.split():
-                if re.match('ee', word):
+                if re.findall('\w\w', word)[-1] == 'ee':
                     new_line = word.replace('ee', '22', 1) + ' '
                 else:
                     new_line = word + ' '
