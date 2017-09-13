@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+
 class MoneyBox:
     def __init__(self, capacity):
         # конструктор с аргументом – вместимость копилки

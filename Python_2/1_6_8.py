@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+
 class ExtendedStack(list):
     def sum(self):
         top1 = self.pop()

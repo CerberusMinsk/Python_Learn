@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+
 def srch(chek_lst):
     rang_list = []
     if len(chek_lst) > 0:
@@ -10,14 +11,14 @@ def srch(chek_lst):
                 rang_list += d[chek_lst[i]]
         return srch(rang_list)
     else:
-        return 0  
-    
+        return 0
+
 
 d = dict()
 n = int(input())
 while n > 0:
     lst = list(input().split(' '))
- 
+
     lst_value = []
     if len(lst) > 1:
         for i in lst[1:]:
@@ -43,5 +44,5 @@ while q > 0:
             print('Yes')
         else:
             print('No')
-        
+
     q -= 1

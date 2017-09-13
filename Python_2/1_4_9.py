@@ -23,7 +23,8 @@ def get(namespace, var):
             return 0
         else:
             return get(temp.get('parent'), var)
-    else: print('None')
+    else:
+        print('None')
 
 
 n = int(input())
