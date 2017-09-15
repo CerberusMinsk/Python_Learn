@@ -12,8 +12,10 @@ class Loggable:
 class LoggableList(list, Loggable):
     def append(self, msg):
         super(LoggableList, self).append(msg)
-        Loggable.log(self, msg)
+        self.log(msg)
 
 
 sss = LoggableList()
 sss.append(5)
+sss.append(101)
+print(sss)
